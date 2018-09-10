@@ -9,11 +9,11 @@
 </head>
 <bo class="row"dy>
     <main id="main-doc">
-        <section class="main-section" id="javascript"> <!--Minimum of 5 sections-->
+        <section class="main-section" id="javascript-nav"> <!--Minimum of 5 sections-->
                 <nav id="navbar">
                     <div class="row">
-                    <header><img src="img/logo.png" alt=""> Javascript</header>
-                        <p>Content Source:<a class="nav-link" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript"> MDN Web Docs</a></p>
+                    <header><img src="img/logo.png" alt=""> JavaScript</header>
+                        <p>Content Source:<a class="nav-link" target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript"> MDN Web Docs</a></p>
                     </div>
                     <ul>
                         <li><a href="#introduction">Introduction</a></li>
@@ -23,29 +23,66 @@
                         <li><a href="#client">Client-side Web APIs</a></li>
                     </ul>
                 </nav>
-        
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatem quas rerum enim ab nam harum cum eius laborum vero adipisci autem, non officiis ducimus unde soluta voluptatibus nesciunt? Delectus itaque impedit officia, doloremque numquam tenetur dolorum fugiat eaque tempore nobis praesentium nemo quidem, repudiandae asperiores. Facilis cupiditate a, ad alias voluptatum nam natus nesciunt quos voluptate saepe quo expedita at quia eum commodi qui accusantium cumque earum beatae. Doloribus minus repellat odit quia nobis, culpa quas nihil a. Tempore, numquam. Architecto repellat id corrupti optio totam quis nihil incidunt vitae itaque voluptas, nulla reiciendis sequi sit. Nisi consequuntur iste quos, eos vero obcaecati esse perspiciatis eaque quibusdam porro aliquam blanditiis sint quae consequatur quas fuga ducimus voluptas ad animi, vitae maiores magnam quidem dicta nobis. Labore iste reiciendis non voluptas odio voluptates corporis architecto quod alias provident nisi cum excepturi cumque fugiat aperiam delectus, ex nemo eveniet explicabo. Iste!</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
         </section>
-      
+
+        <section id="introduction" class="main-section">
+            <div class="header-intro">
+                <header>Introduction</header>
+            </div>      
+            <div class="container">
+                <div class="row">
+                    <p>JavaScript is a programming language that allows you to implement complex things on web pages. Every time a web page
+                    does more than just sit there and display static information for you to look at — displaying timely content
+                    updates, or interactive maps, or animated 2D/3D graphics, or scrolling video jukeboxes, and so on — you can bet
+                    that JavaScript is probably involved.</p>
+                    <ul>
+                    <li>Conceived as a server-side language by Brendan Eich (then employed by the Netscape Corporation), JavaScript soon came
+                    to Netscape Navigator 2.0 in September 1995. JavaScript enjoyed immediate success and Internet Explorer 3.0 introduced
+                    JavaScript support under the name JScript in August 1996.</li>
+                    <li>JavaScript is mostly used in the browser, enabling developers to manipulate webpage content through the DOM, manipulate
+                    data with AJAX and IndexedDB, draw graphics with canvas, interact with the device running the browser through various
+                    APIs, and so forth. JavaScript is one of the world's most commonly-used languages, owing to the recent growth and
+                    performance improvement of APIs available in browsers.</li>
+                    <li>Recently, JavaScript's popularity has expanded even further through the successful Node.js platform - the most popular
+                    cross-platform JavaScript runtime environment outside the browser. Node.js allows developers to use JavaScript as a
+                    scripting language to automate things on a PC and build fully functional HTTP and Web Sockets servers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+ 
+        <section id="basics" class="main-section">
+            <div class="header-intro">
+                <header>Basics</header>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <h1>Variable</h1>
+                    <p>A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a
+                    sentence. But one special thing about variables is that their contained values can change. Let's look at a simple
+                    example:</p>
+                    <code>var button = document.querySelector('button');</code>
+                    <p>Variables just make sense, and as you learn more about JavaScript they will start to become second nature.</p>
+                    <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers.
+                    Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as
+                    you go along.</p>
+                </div>
+                <div class="row">
+                    <h1>Declaring a Variable</h1>
+                    <p>To use a variable you've first got to create it — more accurately, we call this declaring the variable. To do this, we
+                    type the keyword var followed by the name you want to call your variable:</p>
+                    <code>var myName;<br>
+                          var myAge;</code>
+                    <p>Here we're creating two variables called myName and myAge.</p>
+                    <h1>Initializing a Variable</h1>
+                    <p>Once you've declared a variable, you can initialize it with a value. You do this by typing the variable name, followed
+                    by an equals sign (=), followed by the value you want to give it.</p>
+                </div>
+            </div>
+
+
+
+        </section>
     </main>
     
 </body>

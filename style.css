@@ -1,7 +1,7 @@
 *
 {margin: 0; padding: 0;}
 
-header
+#javascript-nav header
 {
     font-size: 'Cambria', serif;
     color: ivory;
@@ -78,25 +78,114 @@ ul a:hover
     -o-transform: scale(1.05);
 }
 
-.main 
-{
-    margin-left: 160px;
-    padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) 
-{
-    .sidenav 
-    {
+@media screen and (max-height: 450px) {
+    #navbar {
         padding-top: 15px;
     }
 
-    .sidenav a {
+    #navbar a {
         font-size: 18px;
     }
 }
 
-p
+p {
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Introduction Section */
+
+#introduction
+{
+    margin: 20px 20px 20px 375px;
+    padding: 10px 10px;
+    border: 1px solid darkslategrey;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+#introduction header
+{
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: ivory;
+    text-align: center;
+    background: slategray;
+    border-radius: 4px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+#introduction p
 {
     font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+
+#introduction li
+{
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    margin: 0 20px 20px 60px;
+}
+
+/* Basics Section */
+
+#basics {
+    margin: 20px 20px 20px 375px;
+    padding: 10px 10px;
+    border: 1px solid darkslategrey;
+    border-radius: 4px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+#basics header {
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: ivory;
+    text-align: center;
+    background: slategray;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+#basics p {
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+
+#basics .row h1
+{
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    margin:15px;
+}
+
+code
+{
+    margin: 20px;
+    font-size: 15px;
+    display: block;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: lightblue;
+    padding:15px;
+    margin: 20px;
 }
