@@ -1,7 +1,102 @@
 *
 {margin: 0; padding: 0;}
 
-li
+header
 {
-    list-style: none;
+    font-size: 'Cambria', serif;
+    color: ivory;
+    font-size: 45px;
+    text-align: center;
+}
+
+header img
+{
+    height: 35px;
+    width: 40px;
+    vertical-align: baseline;
+}
+
+#navbar p
+{
+    color: ivory;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Calibri', sans-serif;
+}
+
+.row .nav-link
+{
+    font-family: 'Cambria', serif;
+    font-size: 15px;
+    color: ivory;
+}
+
+.row a 
+{
+    text-decoration: none;
+    color: ivory;
+    
+}
+
+.row a:hover
+{
+    color: lightblue;
+}
+
+#navbar
+{
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: darkslategrey;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+ul a
+{
+    margin-top:30px;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    color: ivory;
+    display: block;
+    text-align: center;
+}
+
+ul a:hover 
+{
+    color: lightblue;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.main 
+{
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) 
+{
+    .sidenav 
+    {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+p
+{
+    font-family: 'Calibri', sans-serif;
 }
