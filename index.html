@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Technical Document Page | FCC Responsive Web Design Project</title>
 </head>
-<bo class="row"dy>
+<body class="row">
     <main id="main-doc">
         <section class="main-section" id="javascript-nav"> <!--Minimum of 5 sections-->
                 <nav id="navbar">
@@ -15,7 +15,7 @@
                     <header><img src="img/logo.png" alt=""> JavaScript</header>
                         <p>Content Source:<a class="nav-link" target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript"> MDN Web Docs</a></p>
                     </div>
-                    <ul>
+                    <ul class="nav-bar">
                         <li><a href="#introduction">Introduction</a></li>
                         <li><a href="#basics">Basics</a></li>
                         <li><a href="#building-blocks">Javascript Building Blocks</a></li>
@@ -65,7 +65,7 @@
                     <p>Variables just make sense, and as you learn more about JavaScript they will start to become second nature.</p>
                     <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers.
                     Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as
-                    you go along.</p>
+                    you go along.</p><br><hr><br>
                 </div>
                 <div class="row">
                     <h1>Declaring a Variable</h1>
@@ -73,14 +73,66 @@
                     type the keyword var followed by the name you want to call your variable:</p>
                     <code>var myName;<br>
                           var myAge;</code>
-                    <p>Here we're creating two variables called myName and myAge.</p>
+                    <p>Here we're creating two variables called myName and myAge.</p><br><hr><br>
                     <h1>Initializing a Variable</h1>
                     <p>Once you've declared a variable, you can initialize it with a value. You do this by typing the variable name, followed
                     by an equals sign (=), followed by the value you want to give it.</p>
+                    <p>You can declare and initialize a variable at the same time, like this:</p>
+                    <code>var myName = 'Sirius';</code>
+                    <p>If you write a multiline JavaScript program that declares and initializes a variable, you can actually declare it after
+                    you initialize it and it will still work. This is because variable declarations are generally done first before the
+                    rest of the code is executed. This is called hoisting — read var hoisting for more detail on the subject.</p><br><hr><br>
+                    <h1>Updating a Variable</h1>
+                    <p>Once a variable has been initialized with a value, you can change (or update) that value by simply giving it a
+                    different value.</p>
+                    <code>myName = 'Luna';<br> myAge = 54;</code>
+                    <p>You can call a variable pretty much anything you like, but there are limitations. Generally, you should stick to just
+                    using Latin characters (0-9, a-z, A-Z) and the underscore character.</p>
+                    <ul>
+                        <li>You shouldn't use other characters because they may cause errors or be hard to understand for an international
+                        audience.</li>
+                        <li>Don't use underscores at the start of variable names — this is used in certain JavaScript constructs to mean specific
+                        things, so may get confusing.</li>
+                        <li>Don't use numbers at the start of variables. This isn't allowed and will cause an error.</li>
+                        <li>A safe convention to stick to is so-called "lower camel case", where you stick together multiple words, using lower
+                        case for the whole first word and then capitalize subsequent words. We've been using this for our variable names in the
+                        article so far.</li>
+                        <li>Make variable names intuitive, so they describe the data they contain. Don't just use single letters/numbers, or big
+                        long phrases.</li>
+                        <li>Variables are case sensitive — so myage is a different variable to myAge.</li>
+                        <li>One last point — you also need to avoid using JavaScript reserved words as your variable names — by this, we mean the
+                        words that make up the actual syntax of JavaScript! So you can't use words like var, function, let, and for as variable
+                        names. Browsers will recognize them as different code items, and so you'll get errors.</li>
+                    </ul><br><hr><br>
+                    <h1>Numbers and Operators</h1>
+                    <p>In programming, even the humble decimal number system that we all know so well is more complicated than you might
+                    think. We use different terms to describe different types of decimal numbers, for example:</p>
+                    <ul>
+                        <li>Integers are whole numbers, e.g. 10, 400, or -5.</li>
+                        <li>Floating point numbers (floats) have decimal points and decimal places, for example 12.5, and 56.7786543.</li>
+                        <li>Doubles are a specific type of floating point number that have greater precision than standard floating point numbers
+                        (meaning that they are accurate to a greater number of decimal places).</li>
+                        <p>We even have different types of number systems! Decimal is base 10 (meaning it uses 0–9 in each column), but we also
+                        have things like:</p>
+                        <ul>
+                            <li>Binary — The lowest level language of computers; 0s and 1s.</li>
+                            <li>Octal — Base 8, uses 0–7 in each column.</li>
+                            <li>Hexadecimal — Base 16, uses 0–9 and then a–f in each column. You may have encountered these numbers before when setting
+                            colors in CSS.</li><br><hr><br>
+                        </ul>
+                    </ul>
                 </div>
             </div>
+        </section>
+        <section id="Javascrript_Building_Blocks" class="main-section">
+            <div class="header-intro">
+                <header>Javascript Building Blocks</header>
+            </div>
+            <div class="container">
+                <div class="row">
 
-
+                </div>
+            </div>
 
         </section>
     </main>

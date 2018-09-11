@@ -7,13 +7,14 @@
     color: ivory;
     font-size: 45px;
     text-align: center;
+    background: darkslategray;
 }
 
 header img
 {
-    height: 35px;
+    height: 40px;
     width: 40px;
-    vertical-align: baseline;
+    vertical-align: middle;
 }
 
 #navbar p
@@ -56,22 +57,33 @@ header img
     padding-top: 20px;
 }
 
-ul a
+.nav-bar li
+{ 
+    list-style-type: none;
+}
+
+.nav-bar a
 {
-    margin-top:30px;
-    padding: 6px 8px 6px 16px;
+    margin-top: 20px;
+    padding: 35px 8px 6px 16px;
     text-decoration: none;
+    list-style-type: none;
     font-family: 'Cambria', serif;
     font-size: 25px;
     color: ivory;
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
-ul a:hover 
+.nav-bar a:hover 
 {
     color: lightblue;
     transform: scale(1.05);
+    transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
@@ -137,15 +149,16 @@ p {
 
 /* Basics Section */
 
-#basics {
+#basics
+{
     margin: 20px 20px 20px 375px;
     padding: 10px 10px;
     border: 1px solid darkslategrey;
     border-radius: 4px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 
 #basics header {
@@ -172,7 +185,19 @@ p {
 {
     font-family: 'Cambria', serif;
     font-size: 25px;
-    margin:15px;
+    margin:20px;
+}
+
+hr
+{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+    border-color: darkgray;
 }
 
 code
@@ -188,4 +213,45 @@ code
     background-color: lightblue;
     padding:15px;
     margin: 20px;
+}
+
+.row li
+{
+    margin: 0 10px 20px 60px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+}
+
+/* Javascript Building Blocks Section */
+
+.main-section 
+{
+    margin: 20px 20px 20px 375px;
+    padding: 10px 10px;
+    border: 1px solid darkslategrey;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.main-section header {
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: ivory;
+    text-align: center;
+    background: slategray;
+    border-radius: 4px;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
+}
+
+.main-section p {
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    margin: 15px;
 }
