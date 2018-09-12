@@ -224,7 +224,7 @@ code
 
 /* Javascript Building Blocks Section */
 
-.main-section 
+#building-blocks 
 {
     margin: 20px 20px 20px 375px;
     padding: 10px 10px;
@@ -236,7 +236,8 @@ code
     -o-border-radius: 4px;
 }
 
-.main-section header {
+#building-blocks .header-intro header 
+{
     font-family: 'Cambria', serif;
     font-size: 25px;
     font-weight: bold;
@@ -244,14 +245,16 @@ code
     text-align: center;
     background: slategray;
     border-radius: 4px;
-    -webkit-border-radius: ;
-    -moz-border-radius: ;
-    -ms-border-radius: ;
-    -o-border-radius: ;
 }
 
-.main-section p {
+#building-blocks p {
     font-family: 'Calibri', sans-serif;
     font-size: 20px;
     margin: 15px;
+}
+
+#building-blocks .row h1 {
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    margin: 20px;
 }

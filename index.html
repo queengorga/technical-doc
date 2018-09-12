@@ -66,8 +66,6 @@
                     <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers.
                     Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as
                     you go along.</p><br><hr><br>
-                </div>
-                <div class="row">
                     <h1>Declaring a Variable</h1>
                     <p>To use a variable you've first got to create it — more accurately, we call this declaring the variable. To do this, we
                     type the keyword var followed by the name you want to call your variable:</p>
@@ -124,13 +122,43 @@
                 </div>
             </div>
         </section>
-        <section id="Javascrript_Building_Blocks" class="main-section">
+        <section id="building-blocks" class="main-section">
             <div class="header-intro">
                 <header>Javascript Building Blocks</header>
             </div>
             <div class="container">
                 <div class="row">
-
+                    <h1>Conditionals</h1>
+                    <p>In any programming language, the code needs to make decisions and carry out actions accordingly depending on different
+                    inputs. For example, in a game, if the player's number of lives is 0, then it's game over. In a weather app, if it is
+                    being looked at in the morning, show a sunrise graphic; show stars and a moon if it is nighttime. In this article,
+                    we'll explore how so-called conditional statements work in JavaScript.</p>
+                    <p>Conditional statements allow us to represent such decision making in JavaScript, from the choice that must be made, 
+                    to the resulting outcome of those choices</p>
+                    <h1>If...Else Statements</h1>
+                    <p>Basic if...else syntax looks like so in pseudocode:</p>
+                    <code>if (condition) { <br> code to run if condition is true <br>} else { <br>run some other code instead <br>} </code>
+                    <p>Here we've got:</p>
+                    <ol>
+                        <li>The keyword if followed by some parentheses.</li>
+                        <li>A condition to test, placed inside the parentheses (typically "is this value bigger than this other value", or "does
+                        this value exist"). This condition will make use of the comparison operators we discussed in the last module and will
+                        return true or false.</li>
+                        <li>A set of curly braces, inside which we have some code — this can be any code we like, and will only be run if the
+                        condition returns true.</li>
+                        <li>The keyword else.</li>
+                        <li>Another set of curly braces, inside which we have some more code — this can be any code we like, and will only be run
+                        if the condition is not true.</li>
+                    </ol>
+                    <h1>Switch Statements</h1>
+                    <p>if...else statements do the job of enabling conditional code well, but they are not without their downsides. They are
+                    mainly good for cases where you've got a couple of choices, and each one requires a reasonable amount of code to be
+                    run, and/or the conditions are complex (e.g. multiple logical operators). For cases where you just want to set a
+                    variable to a certain choice of value or print out a particular statement depending on a condition, the syntax can be a
+                    bit cumbersome, especially if you've got a large number of choices.</p>
+                    <p>switch statements are your friend here — they take a single expression/value as an input, and then look through a
+                    number of choices until they find one that matches that value, executing the corresponding code that goes along with
+                    it. Here's some more pseudocode, to give you an idea:</p>
                 </div>
             </div>
 
