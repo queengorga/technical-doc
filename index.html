@@ -529,7 +529,110 @@
                     <p>When you accessed the document object model using lines like this:</p>
                     <code>var myDiv = document.createElement('div');<br>
                     var myVideo = document.querySelector('video');</code>
-
+                    <p>You were using methods available on an instance of the Document class. For each webpage loaded, an instance of Document
+                    is created, called document, which represents the entire page's structure, content, and other features such as its URL.
+                    Again, this means that it has several common methods/properties available on it.</p>
+                    <p>The same is true of pretty much any other built-in object/API you've been using — Array, Math, etc.</p>
+                    <p>Note that built in Objects/APIs don't always create object instances automatically. As an example, the Notifications
+                    API — which allows modern browsers to fire system notifications — requires you to instantiate a new object instance
+                    using the constructor for each notification you want to fire. Try entering the following into your JavaScript console:</p>
+                    <code>var myNotification = new Notification('Hello!');</code>
+                    <p>Note: It is useful to think about the way objects communicate as message passing — when an object needs another object
+                    to perform some kind of action often it will send a message to another object via one of its methods, and wait for a
+                    response, which we know as a return value.</p><br><hr><br>
+                    <h1>Oject-oriented Javascript</h1>
+                    <p>To start with, let's give you a simplistic, high-level view of what Object-oriented programming (OOP) is. We say
+                    simplistic, because OOP can quickly get very complicated, and giving it a full treatment now would probably confuse
+                    more than help. The basic idea of OOP is that we use objects to model real world things that we want to represent
+                    inside our programs, and/or provide a simple way to access functionality that would otherwise be hard or impossible to
+                    make use of.</p>
+                    <p>Objects can contain related data and code, which represent information about the thing you are trying to model, and
+                    functionality or behavior that you want it to have. Object data (and often, functions too) can be stored neatly (the
+                    official word is encapsulated) inside an object package (which can be given a specific name to refer to, which is
+                    sometimes called a namespace), making it easy to structure and access; objects are also commonly used as data stores
+                    that can be easily sent across the network.</p><br><hr><br>
+                    <h1>Constructors and object instances</h1>
+                    <p>JavaScript uses special functions called constructor functions to define objects and their features. They are useful
+                    because you'll often come across situations in which you don't know how many objects you will be creating; constructors
+                    provide the means to create as many objects as you need in an effective way, attaching data and functions to them as
+                    required.</p>
+                    <p>When a new object instance is created from a constructor function, its core functionality (as defined by its prototype,
+                    which we'll explore in the article Object prototypes) is linked to via a reference chain called a prototype chain.</p>
+                    <p>The constructor function is JavaScript's version of a class. You'll notice that it has all the features you'd expect in
+                    a function, although it doesn't return anything or explicitly create an object — it basically just defines properties
+                    and methods. You'll see the this keyword being used here as well — it is basically saying that whenever one of these
+                    object instances is created, the object's name property will be equal to the name value passed to the constructor call,
+                    and the greeting() method will use the name value passed to the constructor call too.</p>
+                    <p>Note: A constructor function name usually starts with a capital letter — this convention is used to make constructor
+                    functions easier to recognize in code.</p>
+                    <p>So how do we call a constructor to create some objects?</p>
+                    <ol>
+                        <li>Add the following lines below your previous code addition:</li>
+                            <code>var person1 = new Person('Bob');<br>
+                            var person2 = new Person('Sarah');</code>
+                        <li>Save your code and reload it in the browser, and try entering the following lines into your JS console:</li>
+                            <code>person1.name <br>
+                            person1.greeting() <br>
+                            person2.name <br>
+                            person2.greeting()</code>
+                    </ol>
+                    <p>Cool! You'll now see that we have two new objects on the page, each of which is stored under a different namespace —
+                    when you access their properties and methods, you have to start calls with person1 or person2; the functionality
+                    contained within is neatly packaged away so it won't clash with other functionality. They do, however, have the same
+                    name property and greeting() method available. Note that they are using their own name value that was assigned to them
+                    when they were created; this is one reason why it is very important to use this, so they will use their own values, and
+                    not some other value.</p><br><hr><br>
+                    <h1>Object prototypes</h1>
+                    <p>JavaScript is often described as a prototype-based language — each object has a prototype object, which acts as a
+                    template object that it inherits methods and properties from. An object's prototype object may also have a prototype
+                    object, which it inherits methods and properties from, and so on. This is often referred to as a prototype chain, and
+                    explains why different objects have properties and methods defined on other objects available to them.</p>
+                    <p>Well, to be exact, the properties and methods are defined on the prototype property on the Objects' constructor
+                    functions, not the object instances themselves.</p>
+                    <p>In JavaScript, a link is made between the object instance and its prototype (its __proto__ property, which is derived
+                    from the prototype property on the constructor), and the properties and methods are found by walking up the chain of
+                    prototypes.</p>
+                    <p>Note: It's important to understand that there is a distinction between an object's prototype (which is available via
+                    Object.getPrototypeOf(obj), or via the deprecated __proto__ property) and the prototype property on constructor
+                    functions. The former is the property on each instance, and the latter is the property on the constructor. That is,
+                    Object.getPrototypeOf(new Foobar()) refers to the same object as Foobar.prototype.</p><br><hr><br>
+                    <h1>The prototype property: Where inherited members are defined</h1>
+                    <p>So, where are the inherited properties and methods defined? If you look at the Object reference page, you'll see listed
+                    in the left hand side a large number of properties and methods — many more than the number of inherited members we saw
+                    available on the person1 object in the above screenshot. Some are inherited, and some aren't — why is this?</p>
+                    <p>The answer is that the inherited ones are the ones defined on the prototype property (you could call it a
+                    sub-namespace) — that is, the ones that begin with Object.prototype., and not the ones that begin with just Object. The
+                    prototype property's value is an object, which is basically a bucket for storing properties and methods that we want to
+                    be inherited by objects further down the prototype chain.</p>
+                    <p>So Object.prototype.watch(), Object.prototype.valueOf(), etc., are available to any object types that inherit from
+                    Object.prototype, including new object instances created from the constructor.</p>
+                    <p>Object.is(), Object.keys(), and other members not defined inside the prototype bucket are not inherited by object
+                    instances or object types that inherit from Object.prototype. They are methods/properties available just on the
+                    Object() constructor itself.</p>
+                    <p>Note: This seems strange — how can you have a method defined on a constructor, which is itself a function? Well, a
+                    function is also a type of object — see the Function() constructor reference if you don't believe us.</p>
+                    <ol>
+                        <li>You can check out existing prototype properties for yourself — go back to our previous example and try entering the
+                        following into the JavaScript console:</li>
+                        <code>Person.prototype</code>
+                        <li>The output won't show you very much — after all, we haven't defined anything on our custom constructor's prototype! By
+                        default, a constructor's prototype always starts empty. Now try the following:</li>
+                        <code>Object.prototype</code>
+                    </ol>
+                    <p>You'll see a large number of methods defined on Object's prototype property, which are then available on objects that
+                    inherit from Object, as shown earlier.</p>
+                    <p>You'll see other examples of prototype chain inheritance all over JavaScript — try looking for the methods and
+                    properties defined on the prototype of the String, Date, Number, and Array global objects, for example. These all have
+                    a number of members defined on their prototype, which is why for example when you create a string, like this:</p>
+                    <code>var myString = 'This is my string.';</code>
+                    <p>myString immediately has a number of useful methods available on it, like split(), indexOf(), replace(), etc.</p>
+                    <p>Note: It is worth reading our more in-depth guide to Using prototypes in JavaScript, once you've make sense of this
+                    section and wish to know more. This section is intentionally simplified to make these concepts a little easier to
+                    understand when you first meet them.</p>
+                    <p>Important: The prototype property is one of the most confusingly-named parts of JavaScript — you might think that this
+                    points to the prototype object of the current object, but it doesn't (that's an internal object that can be accessed by
+                    __proto__, remember?). prototype instead is a property containing an object on which you define members that you want
+                    to be inherited.</p>
                 </div>
             </div>
     </main>
