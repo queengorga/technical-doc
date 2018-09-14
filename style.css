@@ -297,3 +297,42 @@ code
     font-size: 25px;
     margin: 20px;
 }
+
+/*Clien-side Web APIs Section*/
+
+#client-side 
+{
+    margin: 20px 20px 20px 375px;
+    padding: 10px 10px;
+    border: 1px solid darkslategrey;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+#client-side .header-intro header 
+{
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: ivory;
+    text-align: center;
+    background: slategray;
+    border-radius: 4px;
+}
+
+#client-side p
+{
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+
+#client-side .row h1
+{
+    font-family: 'Cambria', serif;
+    font-size: 25px;
+    margin: 20px;
+}

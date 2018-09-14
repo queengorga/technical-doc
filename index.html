@@ -20,7 +20,7 @@
                         <li><a href="#basics">Basics</a></li>
                         <li><a href="#building-blocks">Javascript Building Blocks</a></li>
                         <li><a href="#objects">Javascript Objects</a></li>
-                        <li><a href="#client">Client-side Web APIs</a></li>
+                        <li><a href="#client-side">Client-side Web APIs</a></li>
                     </ul>
                 </nav>
         </section>
@@ -440,7 +440,7 @@
                     entering the following below the JavaScript code that's already in your file, then saving and refreshing:</p>
                     <code>var person = {};</code>
                     <p>If you enter person into your JS console and press the button, you should get the following result:</p>
-                    <code>[object Object]</code>
+                    <code>[object Object]</code><br><hr><br>
                     <h1>Dot notation</h1>
                     <p>Above, you accessed the object's properties and methods using dot notation. The object name (person) acts as the
                     namespace — it must be entered first to access anything encapsulated inside the object. Next you write a dot, then the
@@ -504,7 +504,7 @@
                     <p>Now try saving and refreshing, and entering the following into your text input:</p>
                     <code>person.height</code>
                     <p>Adding a property to an object using the method above isn't possible with dot notation, which can only accept a literal
-                    member name, not a variable value pointing to a name.</p>
+                    member name, not a variable value pointing to a name.</p><br><hr><br>
                     <h1>This</h1>
                     <p>You may have noticed something slightly strange in our methods. Look at this one for example:</p>
                     <code>greeting: function() { <br>
@@ -514,7 +514,7 @@
                     inside — so in this case this is equivalent to person. So why not just write person instead? As you'll see in the
                     Object-oriented JavaScript for beginners article when we start creating constructors, etc., this is very useful — it
                     will always ensure that the correct values are used when a member's context changes (e.g. two different person object
-                    instances may have different names, but will want to use their own name when saying their greeting).</p>
+                    instances may have different names, but will want to use their own name when saying their greeting).</p><br><hr><br>
                     <h1>You've been using objects all along</h1>
                     <p>As you've been going through these examples, you have probably been thinking that the dot notation you've been using is
                     very familiar. That's because you've been using it throughout the course! Every time we've been working through an
@@ -632,9 +632,92 @@
                     <p>Important: The prototype property is one of the most confusingly-named parts of JavaScript — you might think that this
                     points to the prototype object of the current object, but it doesn't (that's an internal object that can be accessed by
                     __proto__, remember?). prototype instead is a property containing an object on which you define members that you want
-                    to be inherited.</p>
+                    to be inherited.</p><br><hr><br>
+                    <h1>Working with JSON</h1>
+                    <p>JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript
+                    object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server
+                    to the client, so it can be displayed on a web page, or vice versa). You'll come across it quite often, so in this
+                    article we give you all you need to work with JSON using JavaScript, including parsing JSON so you can access data
+                    within it, and creating JSON.</p>
+                    <p>JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even
+                    though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many
+                    programming environments feature the ability to read (parse) and generate JSON.</p>
+                    <p>JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a native
+                    JavaScript object when you want to access the data. This is not a big issue — JavaScript provides a global JSON object
+                    that has methods available for converting between the two.</p>
+                    <p>Note: Converting a string to a native object is called parsing, while converting a native object to a string so it can
+                    be transmitted across the network is called stringification.</p>
+                    <p>A JSON object can be stored in its own file, which is basically just a text file with an extension of .json, and a MIME
+                    type of application/json.</p>
+                    <p>As described above, a JSON is a string whose format very much resembles JavaScript object literal format. You can
+                    include the same basic data types inside JSON as you can in a standard JavaScript object — strings, numbers, arrays,
+                    booleans, and other object literals.</p>
+                    <p>If we loaded this object into a JavaScript program, parsed in a variable called superHeroes for example, we could then
+                    access the data inside it using the same dot/bracket notation we looked at in the JavaScript object basics article. For
+                    example:</p>
+                    <code>superHeroes.homeTown <br>
+                    superHeroes['active']</code>
+                    <p>To access data further down the hierarchy, you simply have to chain the required property names and array indexes
+                    together. For example, to access the third superpower of the second hero listed in the members list, you'd do this:</p>
+                    <code>superHeroes['members'][1]['powers'][2]</code>
+                    <ol>
+                        <li>First we have the variable name — superHeroes.</li>
+                        <li>Inside that we want to access the members property, so we use ["members"].</li>
+                        <li>members contains an array populated by objects. We want to access the second object inside the array, so we use [1].</li>
+                        <li>Inside this object, we want to access the powers property, so we use ["powers"].</li>
+                        <li>Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use
+                        [2].</li>
+                    </ol>
+                    <p>Note: We've made the JSON seen above available inside a variable in our JSONTest.html example (see the source code).
+                    Try loading this up and then accessing data inside the variable via your browser's JavaScript console.</p>
+                    <p>Other Notes:</p>
+                    <ul>
+                        <li>JSON is purely a data format — it contains only properties, no methods.</li>
+                        <li>JSON requires double quotes to be used around strings and property names. Single quotes are not valid.</li>
+                        <li>Even a single misplaced comma or colon can cause a JSON file to go wrong, and not work. You should be careful to
+                        validate any data you are attempting to use (although computer-generated JSON is less likely to include errors, as long
+                        as the generator program is working correctly). You can validate JSON using an application like JSONLint.</li>
+                        <li>JSON can actually take the form of any data type that is valid for inclusion inside JSON, not just arrays or objects.
+                        So for example, a single string or number would be a valid JSON object.</li>
+                        <li>Unlike in JavaScript code in which object properties may be unquoted, in JSON, only quoted strings may be used as
+                        properties.</li>
+                    </ul>
+
                 </div>
             </div>
+        </section>
+        <section id="client-side" class="main-section">
+            <div class="header-intro">
+                <header>Client-side Web APIs</header>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <h1>What are APIs?</h1>
+                    <p>Application Programming Interfaces (APIs) are constructs made available in programming languages to allow developers to
+                    create complex functionality more easily. They abstract more complex code away from you, providing some easier syntax
+                    to use in its place.</p>
+                    <p>As a real-world example, think about the electricity supply in your house, apartment, or other dwellings. If you want
+                    to use an appliance in your house, you simply plug it into a plug socket and it works. You don't try to wire it
+                    directly into the power supply — to do so would be really inefficient and, if you are not an electrician, difficult and
+                    dangerous to attempt.</p>
+                    <p>In the same way, if you want to say, program some 3D graphics, it is a lot easier to do it using an API written in a
+                    higher level language such as JavaScript or Python, rather than try to directly write low level code (say C or C++)
+                    that directly controls the computer's GPU or other graphics functions.</p><br><hr><br>
+                    <h1>APIs in client-side JavaScript</h1>
+                    <p>Client-side JavaScript, in particular, has many APIs available to it — these are not part of the JavaScript language
+                    itself, rather they are built on top of the core JavaScript language, providing you with extra superpowers to use in
+                    your JavaScript code. They generally fall into two categories:</p>
+                    <ul>
+                        <li><strong>Browser APIs</strong> are built into your web browser and are able to expose data from the browser and surrounding computer
+                        environment and do useful complex things with it. For example, the Geolocation API provides some simple JavaScript
+                        constructs for retrieving location data so you can, for example, plot your location on a Google Map. In the background,
+                        the browser is actually using some complex lower-level code (e.g. C++) to communicate with the device's GPS hardware
+                        (or whatever is available to determine position data), retrieve position data, and return it to the browser environment
+                        for use in your code. But again, this complexity is abstracted away from you by the API.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>    
     </main>
     
 </body>
