@@ -757,8 +757,190 @@
                         <li><strong>APIs for drawing and manipulating graphics</strong> are now widely supported in browsers — the most popular ones are <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a>, which allow you to programmatically update the pixel data contained in an HTML canvas element to create 2D and 3D scenes. For example, you might draw shapes such as rectangles or circles, import an image onto the canvas, and apply a filter to it such as sepia or grayscale using the Canvas API, or create a complex 3D scene with lighting and textures using WebGL. Such APIs are often combined with APIs for creating animation loops (such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame">window.requestAnimationFrame()</a>) and others to make constantly updating scenes like cartoons and games.</li>
                         <li><strong>Audio and Video APIs</strong> like <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">HTMLMediaElement</a>, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API">WebRTC</a> allow you to do really interesting things with multimedia such as creating custom UI controls for playing audio and video, displaying text tracks like captions and subtitles along with your videos, grabbing video from your web camera to be manipulated via a canvas (see above) or displayed on someone else's computer in a web conference, or adding effects to audio tracks (such as gain, distortion, panning, etc).</li>
                         <li><strong>Device APIs</strong> are basically APIs for manipulating and retrieving data from modern device hardware in a way that is useful for web apps. We've already talked about the Geolocation API accessing the device's location data so you can plot your position on a map. Other examples include telling the user that a useful update is available on a web app via system notifications (see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API">Notifications API</a>) or vibration hardware (see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">Vibration API</a>).</li>
-                        <li><strong>Client-side storage APIs</strong> are becoming a lot more widespread in web browsers — the ability to store data on the client-side is very useful if you want to create an app that will save its state between page loads, and perhaps even work when the device is offline. There are a number of options available, e.g. simple name/value storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a>, and more complex tabular data storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB API</a>.</li>
+                        <li><strong>Client-side storage APIs</strong> are becoming a lot more widespread in web browsers — the ability to store data on the client-side is very useful if you want to create an app that will save its state between page loads, and perhaps even work when the device is offline. There are a number of options available, e.g. simple name/value storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a>, and more complex tabular data storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB API</a>.</li><br><hr><br>
                     </ul>
+                    <h1>Common Third-Party APIs</h1>
+                    <p>Third party APIs come in a large variety; some of the more popular ones that you are likely to make use of sooner or
+                    later are:</p>
+                    <ul>
+                        <li>The <a href="https://developer.twitter.com/en/docs">Twitter API</a>, which allows you to do things like displaying your latest tweets on your website.</li>
+                        <li>The <a href="https://cloud.google.com/maps-platform/">Google Maps API</a> allows you to do all sorts of things with maps on your web pages (funnily enough, it also powers Google Maps). This is now an entire suite of APIs, which handle a wide variety of tasks, as evidenced by the <a href="https://developers.google.com/maps/documentation/api-picker">Google Maps API Picker</a>.</li>
+                        <li>The <a href="https://developers.facebook.com/docs/">Facebook suite of APIs</a> enables you to use various parts of the Facebook ecosystem to benefit your app, for example by providing app login using Facebook login, accepting in-app payments, rolling out targetted ad campaigns, etc.</li>
+                        <li>The <a href="https://developers.google.com/youtube/">YouTube API</a>, which allows you to embed YouTube videos on your site, search YouTube, build playlists, and more.</li>
+                        <li>The <a href="https://www.twilio.com/">Twilio API</a>, which provides a framework for building voice and video call functionality into your app, sending SMS/MMS from your apps, and more.</li>
+                    </ul><br><hr><br>
+                    <h1>How do API's work?</h1>
+                    <p>Different JavaScript APIs work in slightly different ways, but generally, they have common features and similar themes
+                    to how they work.</p>
+                    <h1>They are based on Objects</h1>
+                    <p>Your code interacts with APIs using one or more <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects">JavaScript objects</a>, which serve as containers for the data the API uses
+                    (contained in object properties), and the functionality the API makes available (contained in object methods).</p>
+                    <p>Let's return to the example of the Geolocation API — this is a very simple API that consists of a few simple objects:</p>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation">Geolocation</a>, which contains three methods for controlling the retrieval of geodata.</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Position">Position</a>, which represents the position of a device at a given time — this contains a Coordinates object that contains the actual position information, plus a timestamp representing the given time.</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Coordinates">Coordinates</a>, which contains a whole lot of useful data on the device position, including latitude and longitude, altitude, velocity and direction of movement, and more.</li>
+                    </ul><br><hr><br>
+                    <h1>They have recognizable entry points</h1>
+                    <p>When using an API, you should make sure you know where the entry point is for the API. In The Geolocation API, this is pretty simple — it is the Navigator.geolocation property, which returns the browser's Geolocation object that all the useful geolocation methods are available inside.</p>
+                    <p>The Document Object Model (DOM) API has an even simpler entry point — its features tend to be found hanging off the Document object, or an instance of an HTML element that you want to affect in some way, for example:</p>
+                    <code>var em = document.createElement('em'); // create a new em element <br>
+                          var para = document.querySelector('p'); // reference an existing p element <br>
+                          em.textContent = 'Hello there!'; // give em some text content<br>
+                          para.appendChild(em); // embed em inside para</code>
+                    <p>Other APIs have slightly more complex entry points, often involving creating a specific context for the API code to be written in. For example, the Canvas API's context object is created by getting a reference to the canvas element you want to draw on, and then calling its HTMLCanvasElement.getContext() method:</p>
+                    <code>var canvas = document.querySelector('canvas'); <br>
+                          var ctx = canvas.getContext('2d');</code><br><hr><br>
+                    <h1>The Important Parts of a Web Browser</h1>
+                    <p>Web browsers are very complicated pieces of software with a lot of moving parts, many of which can't be controlled or
+                    manipulated by a web developer using JavaScript. You might think that such limitations are a bad thing, but browsers
+                    are locked down for good reasons, mostly centering around security. Imagine if a web site could get access to your
+                    stored passwords or other sensitive information, and log into websites as if it were you?</p><br><hr><br>
+                    <h1>The document object model</h1>
+                    <p>The document currently loaded in each one of your browser tabs is represented by a document object model. This is a
+                    "tree structure" representation created by the browser that enables the HTML structure to be easily accessed by
+                    programming languages — for example the browser itself uses it to apply styling and other information to the correct
+                    elements as it renders a page, and developers like you can manipulate the DOM with JavaScript after the page has been
+                    rendered.</p>
+                    <p>The DOM on the other hand looks like this:</p>
+                    <img src="img/dom.png" alt="" style="margin-left: 50px;">
+                    <p>You can see here that each element and bit of text in the document has its own entry in the tree — each one is called a
+                    node. You will also encounter various terms used to describe the type of node, and their position in the tree in
+                    relation to one another:</p>
+                    <ul>
+                        <li>Element node: An element, as it exists in the DOM.</li>
+                        <li>Root node: The top node in the tree, which in the case of HTML is always the HTML node (other markup vocabularies like
+                        SVG and custom XML will have different root elements).</li>
+                        <li>Child node: A node directly inside another node. For example, IMG is a child of SECTION in the above example.</li>
+                        <li>Descendant node: A node anywhere inside another node. For example, IMG is a child of SECTION in the above example, and
+                        it is also a descendant. IMG is not a child of BODY, as it is two levels below it in the tree, but it is a descendant
+                        of BODY.</li>
+                        <li>Parent node: A node which has another node inside it. For example, BODY is the parent node of SECTION in the above
+                        example.</li>
+                        <li>Sibling nodes: Nodes that sit on the same level in the DOM tree. For example, IMG and P are siblings in the above
+                        example.</li>
+                        <li>Text node: A node containing a text string.</li>
+                    </ul>
+                    <p>It is useful to familiarize yourself with this terminology before working with the DOM, as a number of the code terms
+                    you'll come across make use of them. You may have also come across them if you have studied CSS (e.g. descendant
+                    selector, child selector).</p><br><hr><br>
+                    <h1>Active learning: Basic DOM Manipulation</h1>
+                    <p>To start learning about DOM manipulation, let's begin with a practical example.</p>
+                    <ol>
+                        <li>Take a local copy of the dom-example.html page and the image that goes along with it.</li>
+                        <li>Add a script element just above the closing body tag.</li>
+                        <li>To manipulate an element inside the DOM, you first need to select it and store a reference to it inside a variable.
+                        Inside your script element, add the following line:</li>
+                        <code>var link = document.querySelector('a');</code>
+                        <li>Now we have the element reference stored in a variable, we can start to manipulate it using properties and methods
+                        available to it (these are defined on interfaces like HTMLAnchorElement in the case of a element, its more general
+                            parent interface HTMLElement, and Node — which represents all nodes in a DOM). First of all, let's change the text
+                            inside the link by updating the value of the Node.textContent property. Add the following line below the previous
+                            one:</li>
+                        <code>link.textContent = 'Mozilla Developer Network';</code>
+                        <li>We should also change the URL the link is pointing to, so that it doesn't go to the wrong place when it is clicked on.
+                        Add the following line, again at the bottom:</li>
+                        <code>link.href = 'https://developer.mozilla.org';</code>
+                    </ol>
+                    <p>Note that, as with many things in JavaScript, there are many ways to select an element and store a reference to it in a
+                    variable. Document.querySelector() is the recommended modern approach, which is convenient because it allows you to
+                    select elements using CSS selectors. The above querySelector() call will match the first a element that appears in
+                        the document. If you wanted to match and do things to multiple elements, you could use Document.querySelectorAll(),
+                        which matches every element in the document that matches the selector, and stores references to them in an
+                        array-like object called a NodeList.</p>
+                    <p>There are older methods available for grabbing element references, such as:</p>
+                    <ul>
+                        <li>Document.getElementById(), which selects an element with a given id attribute value, 
+                        The ID is passed to the function as a parameter, i.e. var elementRef = document.getElementById('myId').</li>
+                        <li>Document.getElementsByTagName(), which returns an array containing all the elements on the page of a given type, for
+                        example p's,a's, etc. The element type is passed to the function as a parameter, i.e. var elementRefArray =
+                        document.getElementsByTagName('p').</li>
+                    </ul><br><hr><br>
+                    <h1>Fetching data from the server</h1>
+                    <p>Another very common task in modern websites and applications is retrieving individual data items from the server to
+                    update sections of a webpage without having to load an entire new page. This seemingly small detail has had a huge
+                    impact on the performance and behavior of sites, so in this article we'll explain the concept and look at technologies
+                    that make it possible, such as XMLHttpRequest and the Fetch API.</p>
+                    <p>Originally page loading on the web was simple — you'd send a request for a web site to a server, and as long as nothing
+                    went wrong, the assets that made the web page would be downloaded and displayed on your computer.</p>
+                    <p>The trouble with this model is that whenever you want to update any part of the page, for example to display a new set
+                    of products or load a new page, you've got to load the entire page again. This is extremely wasteful and results in a
+                    poor user experience, especially as pages get larger and more complex.</p><br><hr><br>
+                    <h1>Ajax</h1>
+                    <p>This led to the creation of technologies that allow web pages to request small chunks of data (such as HTML, XML, JSON,
+                    or plain text) and display them only when needed, helping to solve the problem described above.</p>
+                    <p>This is achieved by using APIs like XMLHttpRequest or — more recently — the Fetch API. These technologies allow web
+                    pages to directly handle making HTTP requests for specific resources available on a server, and formatting the
+                    resulting data as needed, before it is displayed.</p>
+                    <p>The Ajax model involves using a web API as a proxy to more intelligently request data rather than just having the
+                    browser to reload the entire page. Let's think about the significance of this:</p>
+                    <ol>
+                        <li>Go to one of your favorite information-rich sites, like Amazon, YouTube, CNN, etc., and load it.</li>
+                        <li>Now search for something, like a new product. The main content will change, but most of the surrounding information,
+                        like the header, footer, navigation menu, etc., will stay the same.</li>
+                    </ol>
+                    <p>This is a really good thing because:</p>
+                    <ul>
+                        <li>Page updates are a lot quicker and you don't have to wait for the page to refresh, meaning that the site feels faster
+                        and more responsive.</li>
+                        <li>Less data is downloaded on each update, meaning less wasted bandwidth. This may not be such a big issue on a desktop on
+                        a broadband connection, but it's a major issue on mobile devices and in developing countries that don't have ubiquitous
+                        fast Internet service.</li>
+                    </ul>
+                    <p>To speed things up even further, some sites also store assets and data on the user's computer when they are first
+                    requested, meaning that on subsequent visits they use the local versions instead of downloading fresh copies when the
+                    page is first loaded. The content is only reloaded from the server when it has been updated.</p><br><hr><br>
+                    <h1>Third-Party APIs</h1>
+                    <p>Third party APIs are APIs provided by third parties — generally companies such as Facebook, Twitter, or Google — to
+                    allow you to access their functionality via JavaScript and use it on your own site. As we showed in our introductory
+                    APIs article, one of the most obvious examples is using the Google Maps APIs to display custom maps on your pages.</p>
+                    <p>Note: By default, using third-party APIs on your site will allow them to track with their own domain cookies, set
+                    cookies on your origin, obtain referer headers identifying the pages users visit and allow them to execute JavaScript
+                    on the pages they are loaded on with the same origin permissions (for example, execute AJAX requests to your servers
+                    with same session cookies). Regulatory, security, and privacy implications should be assessed. Mitigations of default
+                    security risks are sometimes possible, but will likely require support from a specialist in web security.</p>
+                    <p>Browser APIs are built into the browser — you can access them from JavaScript immediately. For example, the Geolocation
+                    API used in our example is accessed using the geolocation property of the Navigator object, which returns a Geolocation
+                    object. This example uses the getCurrentPosition() method of this object to request the device's current position:</p>
+                    <code>navigator.geolocation.getCurrentPosition(function(position) { ... });</code>
+                    <p>Third party APIs, on the other hand, are located on third party servers. To access them from JavaScript you first need
+                    to connect to the API functionality and make it available on your page. This typically involves first linking to a
+                    JavaScript library available on the server via a
+                    script element.</p>
+                    <p>Security for browser APIs tends to be handled by permission prompts, as discussed in our first article. The purpose of
+                    these is so that the user knows what is going on in the websites they visit and is less likely to fall victim to
+                    someone using an API in a malicious way.</p>
+                    <p>Third party APIs have a slightly different permissions system — they tend to use key codes to allow developers access
+                    to the API functionality. Look again at the URL of the Google Maps API library we linked to:</p>
+                    <code>https://maps.google.com/maps/api/js?key=AIzaSyDDuGt0E5IEGkcE6ZfrKfUtE9Ko_de66pA</code>
+                    <p>The URL parameter provided at the end of the URL is a developer key — the developer of the application must apply to
+                    get a key, and then include it in their code in a specific way to be allowed access to the API's functionality. In the
+                    case of Google Maps (and other Google APIs), you apply for a key at the Google Cloud Platform.</p>
+                    <p>Other APIs may require that you include the key in a slightly different way, but the pattern is fairly similar for most
+                    of them.</p>
+                    <p>The point of requiring a key is so that not just anybody can use API functionality without any kind of accountability.
+                    When the developer has registered for a key, they are then known to the API provider, and action can be taken if they
+                    start to do anything malicious with the API (such as tracking people's location or trying to spam the API with loads of
+                    requests to stop it working, for example). The easiest action would be to just revoke their API privileges.</p><br><hr><br>
+                    <h1>Client-side storage</h1>
+                    <p>Elsewhere in the MDN learning area we talked about the difference between static sites and dynamic sites. Most major
+                    modern web sites are dynamic — they store data on the server using some kind of database (server-side storage), then
+                    run server-side code to retrieve needed data, insert it into static page templates, and serve the resulting HTML to the
+                    client to be displayed by the user's browser.</p>
+                    <p>Client-side storage works on similar principles, but has different uses. It consists of JavaScript APIs that allow you
+                    to store data on the client (i.e. on the user's machine) and then retrieve it when needed. This has many distinct uses,
+                    such as:</p>
+                    <ul>
+                        <li>Personalizing site preferences (e.g. showing a user's choice of custom widgets, color scheme, or font size).</li>
+                        <li>Persisting previous site activity (e.g. storing the contents of a shopping cart from a previous session, remembering if
+                        a user was previously logged in).</li>
+                        <li>Saving data and assets locally so a site will be quicker (and potentially less expensive) to download, or be usable
+                        without a network connection.</li>
+                        <li>Saving web application generated documents locally for use offline</li>
+                    </ul><br>
+                    <div class="back-top">
+                    <a href="#">Back To Top</a>
+                    </div>
                 </div>
             </div>
         </section>    

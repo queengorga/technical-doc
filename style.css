@@ -346,3 +346,46 @@ code
 {
     text-decoration: underline;
 }
+
+#client-side .back-top
+{
+    text-align: center;
+    background: darkslategray;
+    border: 1px solid darkslategray;
+    width: 150px;
+    height: 25px;
+    border-radius: 6px;
+    float: right;
+    margin: 20px;
+    text-decoration: none;
+}
+
+#client-side .back-top a
+{
+    text-decoration: none;
+    font-family: 'Calibri', sans-serif;
+    color: ivory;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+#client-side .back-top:hover
+{
+    background-color: lightblue;
+    color: black;
+    transition: ease-in-out;
+    -webkit-transition: ease-in-out;
+    -moz-transition: ease-in-out;
+    -ms-transition: ease-in-out;
+    -o-transition: ease-in-out;
+}
+
+#client-side .back-top a:hover
+{
+    color: black;
+    transition: ease-in-out;
+    -webkit-transition: ease-in-out;
+    -moz-transition: ease-in-out;
+    -ms-transition: ease-in-out;
+    -o-transition: ease-in-out;
+}
