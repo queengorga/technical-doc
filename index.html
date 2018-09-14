@@ -714,6 +714,50 @@
                         the browser is actually using some complex lower-level code (e.g. C++) to communicate with the device's GPS hardware
                         (or whatever is available to determine position data), retrieve position data, and return it to the browser environment
                         for use in your code. But again, this complexity is abstracted away from you by the API.</li>
+                        <li><strong>Third party APIs</strong> are not built into the browser by default, and you generally have to retrieve their code and
+                        information from somewhere on the Web. For example, the Twitter API allows you to do things like displaying your latest
+                        tweets on your website. It provides a special set of constructs you can use to query the Twitter service and return
+                        specific information.</li>
+                    </ul><br><hr><br>
+                    <h1>Relationship between JavaScript, APIs, and other JavaScript tools</h1>
+                    <p>So above, we talked about what client-side JavaScript APIs are, and how they relate to the JavaScript language. Let's
+                    recap this to make it clearer, and also mention where other JavaScript tools fit in:</p>
+                    <ul>
+                        <li>JavaScript — A high-level scripting language built into browsers that allows you to implement functionality on web
+                        pages/apps. Note that JavaScript is also available in other programming environments, such as Node.</li>
+                        <li>Browser APIs — constructs built into the browser that sit on top of the JavaScript language and allow you to implement
+                        functionality more easily.</li>
+                        <li>Third party APIs — constructs built into third-party platforms (e.g. Twitter, Facebook) that allow you to use some of
+                        those platform's functionality in your own web pages (for example, display your latest Tweets on your web page).</li>
+                        <li>JavaScript libraries — Usually one or more JavaScript files containing custom functions that you can attach to your web
+                        page to speed up or enable writing common functionality. Examples include jQuery, Mootools and React.</li>
+                        <li>JavaScript frameworks — The next step up from libraries, JavaScript frameworks (e.g. Angular and Ember) tend to be
+                        packages of HTML, CSS, JavaScript, and other technologies that you install and then use to write an entire web
+                        application from scratch. The key difference between a library and a framework is “Inversion of Control”. When calling
+                        a method from a library, the developer is in control. With a framework, the control is inverted: the framework calls
+                        the developer's code.</li>
+                    </ul><br><hr><br>
+                    <h1>What APIs can do?</h1>
+                    <p>There are a huge number of APIs available in modern browsers that allow you to do a wide variety of things in your
+                    code. You can see this by taking a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">MDN APIs index page.</a></p><br><hr><br>
+                    <h1>Common Browser APIs</h1>
+                    <p>In particular, the most common categories of browser APIs you'll use (and which we'll cover in this module in greater
+                    detail) are:</p>
+                    <ul>
+                        <li><strong>APIs for manipulating documents</strong> loaded into the browser. The most obvious example is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM (Document Object Model)
+                        API</a>, which allows you to manipulate HTML and CSS — creating, removing and changing HTML, dynamically applying new
+                        styles to your page, etc. Every time you see a popup window appear on a page, or some new content displayed, for
+                        example, that's the DOM in action. Find out more about these types of API in <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents">Manipulating documents</a>.</li>
+                        <li><strong>APIs that fetch data from the server</strong> to update small sections of a webpage on their own are very commonly used. This
+                        seemingly small detail has had a huge impact on the performance and behaviour of sites — if you just need to update a
+                        stock listing or list of available new stories, doing it instantly without having to reload the whole entire page from
+                        the server can make the site or app feel much more responsive and "snappy". APIs that make this possible include
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a>. You may also come across the term <strong>Ajax</strong>, which describes this technique. Find out more
+                        about such APIs in <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data">Fetching data from the server</a>.</li>
+                        <li><strong>APIs for drawing and manipulating graphics</strong> are now widely supported in browsers — the most popular ones are <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a>, which allow you to programmatically update the pixel data contained in an HTML canvas element to create 2D and 3D scenes. For example, you might draw shapes such as rectangles or circles, import an image onto the canvas, and apply a filter to it such as sepia or grayscale using the Canvas API, or create a complex 3D scene with lighting and textures using WebGL. Such APIs are often combined with APIs for creating animation loops (such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame">window.requestAnimationFrame()</a>) and others to make constantly updating scenes like cartoons and games.</li>
+                        <li><strong>Audio and Video APIs</strong> like <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">HTMLMediaElement</a>, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API">WebRTC</a> allow you to do really interesting things with multimedia such as creating custom UI controls for playing audio and video, displaying text tracks like captions and subtitles along with your videos, grabbing video from your web camera to be manipulated via a canvas (see above) or displayed on someone else's computer in a web conference, or adding effects to audio tracks (such as gain, distortion, panning, etc).</li>
+                        <li><strong>Device APIs</strong> are basically APIs for manipulating and retrieving data from modern device hardware in a way that is useful for web apps. We've already talked about the Geolocation API accessing the device's location data so you can plot your position on a map. Other examples include telling the user that a useful update is available on a web app via system notifications (see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API">Notifications API</a>) or vibration hardware (see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">Vibration API</a>).</li>
+                        <li><strong>Client-side storage APIs</strong> are becoming a lot more widespread in web browsers — the ability to store data on the client-side is very useful if you want to create an app that will save its state between page loads, and perhaps even work when the device is offline. There are a number of options available, e.g. simple name/value storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a>, and more complex tabular data storage with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB API</a>.</li>
                     </ul>
                 </div>
             </div>

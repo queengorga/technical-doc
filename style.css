@@ -127,10 +127,10 @@ p {
     text-align: center;
     background: slategray;
     border-radius: 4px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
 }
 
 #introduction p
@@ -335,4 +335,14 @@ code
     font-family: 'Cambria', serif;
     font-size: 25px;
     margin: 20px;
+}
+
+#client-side a
+{
+    color: blue;
+}
+
+#client-side a:hover
+{
+    text-decoration: underline;
 }
