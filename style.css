@@ -25,18 +25,18 @@ header img
     font-family: 'Calibri', sans-serif;
 }
 
-.row .nav-link
+.row .source
 {
     font-family: 'Cambria', serif;
     font-size: 15px;
     color: ivory;
 }
 
-.row a 
+.nav-link a 
 {
     text-decoration: none;
     color: ivory;
-    
+    font-size: 15px;
 }
 
 .row a:hover
