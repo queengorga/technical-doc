@@ -14,7 +14,8 @@ header img
 {
     height: 40px;
     width: 40px;
-    vertical-align: middle;
+    vertical-align: top;
+    margin: 8px;
 }
 
 #navbar p

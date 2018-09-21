@@ -12,15 +12,15 @@
         <section class="main-section" id="javascript-nav"> <!--Minimum of 5 sections-->
                 <nav id="navbar">
                     <div class="row">
-                    <header><img src="img/logo.png" alt=""> JavaScript</header>
+                    <header><a href="#introduction"><img src="img/logo.png" alt=""></a>JavaScript</header>
                         <p>Content Source:<a class="source" target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript"> MDN Web Docs</a></p>
                     </div>
                     <ul class="nav-bar">
                         <li><a class="nav-link" href="#introduction">Introduction</a></li>
-                        <li><a class="nav-link" href="#basics">Basics</a></li>
-                        <li><a class="nav-link" href="#building-blocks">Javascript Building Blocks</a></li>
-                        <li><a class="nav-link" href="#objects">Javascript Objects</a></li>
-                        <li><a class="nav-link" href="#client-side">Client-side Web APIs</a></li>
+                        <li><a class="nav-link" href="#basics-intro">Basics</a></li>
+                        <li><a class="nav-link" href="#bblocks-intro">Javascript Building Blocks</a></li>
+                        <li><a class="nav-link" href="#objects-intro">Javascript Objects</a></li>
+                        <li><a class="nav-link" href="#client-intro">Client-side Web APIs</a></li>
                     </ul>
                 </nav>
         </section>
@@ -63,7 +63,7 @@
                     example:</p>
                     <code>var button = document.querySelector('button');</code>
                     <p>Variables just make sense, and as you learn more about JavaScript they will start to become second nature.</p>
-                    <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers.
+                    <p id="basics-intro">Another special thing about variables is that they can contain just about anything — not just strings and numbers.
                     Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as
                     you go along.</p><br><hr><br>
                     <h1>Declaring a Variable</h1>
@@ -134,7 +134,7 @@
                     being looked at in the morning, show a sunrise graphic; show stars and a moon if it is nighttime. In this article,
                     we'll explore how so-called conditional statements work in JavaScript.</p>
                     <p>Conditional statements allow us to represent such decision making in JavaScript, from the choice that must be made, 
-                    to the resulting outcome of those choices</p><br><hr><br>
+                    to the resulting outcome of those choices</p><br id="bblocks-intro"><hr><br>
                     <h1>If...Else Statements</h1>
                     <p>Basic if...else syntax looks like so in pseudocode:</p>
                     <code>if (condition) { <br> code to run if condition is true <br>} else { <br>run some other code instead <br>} </code>
@@ -438,7 +438,7 @@
                     <p>To begin with, make a local copy of our oojs.html file. This contains very little — a script element for us to write our source code into.We'll use this as a basis for exploring basic object syntax. While working with this example you should have your developer tools JavaScript console open and ready to type in some commands.</p>
                     <p>As with many things in JavaScript, creating an object often begins with defining and initializing a variable. Try
                     entering the following below the JavaScript code that's already in your file, then saving and refreshing:</p>
-                    <code>var person = {};</code>
+                    <code id="objects-intro">var person = {};</code>
                     <p>If you enter person into your JS console and press the button, you should get the following result:</p>
                     <code>[object Object]</code><br><hr><br>
                     <h1>Dot notation</h1>
@@ -700,7 +700,7 @@
                     to use an appliance in your house, you simply plug it into a plug socket and it works. You don't try to wire it
                     directly into the power supply — to do so would be really inefficient and, if you are not an electrician, difficult and
                     dangerous to attempt.</p>
-                    <p>In the same way, if you want to say, program some 3D graphics, it is a lot easier to do it using an API written in a
+                    <p id="client-intro">In the same way, if you want to say, program some 3D graphics, it is a lot easier to do it using an API written in a
                     higher level language such as JavaScript or Python, rather than try to directly write low level code (say C or C++)
                     that directly controls the computer's GPU or other graphics functions.</p><br><hr><br>
                     <h1>APIs in client-side JavaScript</h1>
@@ -939,12 +939,13 @@
                         <li>Saving web application generated documents locally for use offline</li>
                     </ul><br>
                     <div class="back-top">
-                    <a href="#">Back To Top</a>
+                    <a href="#introduction">Back To Top</a>
                     </div>
                 </div>
             </div>
         </section>    
     </main>
     
+    <script src="script.js"></script>
 </body>
 </html>
